@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Manager - Secure Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container" id="loginContainer">
+    <h1>🔐 Login</h1>
+    <input type="text" id="loginUsername" placeholder="Username" autocomplete="off" />
+    <input type="password" id="loginPassword" placeholder="Password" autocomplete="off" />
+    <input type="password" id="loginMasterPassword" placeholder="Master Password" autocomplete="off" />
+    <button id="loginBtn">Login</button>
+    <div id="loginMessage" class="message"></div>
+    <div id="goToOtpLogin">Login with Email OTP</div>
+    <div id="registerPrompt">
+      Don’t have an account? Register here
+    </div>
+  </div>
+
+  <div class="container" id="registerContainer" style="display:none;">
+    <h1>🆕 Register Account</h1>
+    <input type="text" id="registerUsername" placeholder="Username" autocomplete="off" />
+    <input type="text" id="registerEmail" placeholder="Email Address" autocomplete="off" /> <input type="password" id="registerPassword" placeholder="Password" autocomplete="off" />
+
+    <div id="strength-bar-container">
+      <div id="strength-bar"></div>
+    </div>
+    <div id="strength-text"></div>
+
+    <button id="suggestPwdBtn" class="utility-btn">Suggest Strong Password</button>
+    <input type="text" id="suggestedPassword" placeholder="Suggested Password" readonly style="margin-bottom:15px;" />
+    <input type="password" id="registerMasterPassword" placeholder="Master Password" autocomplete="off" />
+    <button id="registerBtn">Register</button>
+    <div id="registerMessage" class="message">
+      <span id="tickIcon" style="display:none; font-size:1.5rem; margin-right: 6px;">✔️</span>
+      <span id="registerMsgText"></span>
+    </div>
+    <div id="goToLogin">
+      Already have an account? Login here
+    </div>
+  </div>
+
+  <div class="container" id="otpLoginContainer" style="display:none;">
+    <h1>📧 OTP Login</h1>
+    <input type="text" id="otpUsername" placeholder="Username" autocomplete="off" />
+    <button id="sendOtpBtn">Send OTP</button>
+
+    <div id="otpFields" style="display:none; margin-top: 15px;">
+        <input type="text" id="otpCode" placeholder="OTP Code" autocomplete="off" />
+        <input type="password" id="otpMasterPassword" placeholder="Master Password" autocomplete="off" />
+        <button id="otpLoginBtn">Login</button>
+    </div>
+
+    <div id="otpMessage" class="message"></div>
+    <div id="goToPasswordLogin">Login with Password</div>
+  </div>
+
+
+  <div class="container" id="manager" style="display:none;">
+    <h1 id="welcomeMsg"></h1>
+    <input type="text" id="site" placeholder="Website" />
+    <input type="text" id="uname" placeholder="Username / Email" />
+    <input type="password" id="pass" placeholder="Password" />
+
+    <button id="suggestPinBtn" class="utility-btn">✨ Suggest 8-Digit PIN</button>
+
+    <button id="addPwdBtn">💾 Save Password</button>
+    <div id="passwordList"></div>
+    <button class="logout" id="logoutBtn">🚪 Logout</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+/* --- Global Variables (Neumorphic Theme) --- */
+:root {
+  /* Light Mode (Default) */
+  --bg-color: #e0e5ec;
+  --text-color: #5b636d;
+  --highlight-color: #007aff;
+  --danger-color: #d64040;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --inset-shadow-light: #ffffff;
+  --inset-shadow-dark: #a3b1c6;
+  --input-bg: var(--bg-color);
+  --input-readonly-bg: #d1d9e6;
+}
+
+body[data-theme="dark"] {
+  /* Dark Mode Overrides */
+  --bg-color: #2c2f35;
+  --text-color: #d1d9e6;
+  --highlight-color: #007aff;
+  --danger-color: #d64040;
+  --shadow-light: #3a3e45; /* Lighter shadow */
+  --shadow-dark: #1e2024; /* Darker shadow */
+  --inset-shadow-light: #3a3e45;
+  --inset-shadow-dark: #1e2024;
+  --input-bg: var(--bg-color);
+  --input-readonly-bg: #3a3e45;
+}
+
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Body --- */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  /* Add transitions for smooth theme change */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* --- Containers --- */
+.container {
+  background: var(--bg-color);
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+              -8px -8px 16px var(--shadow-light);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- Titles --- */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* --- Inputs (Pressed-in / Inset) --- */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 10px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  box-shadow: inset 4px 4px 8px var(--inset-shadow-dark),
+              inset -4px -4px 8px var(--inset-shadow-light);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  box-shadow: inset 2px 2px 4px var(--inset-shadow-dark),
+              inset -2px -2px 4px var(--inset-shadow-light),
+              0 0 0 2px var(--highlight-color);
+}
+
+input[readonly] {
+  background: var(--input-readonly-bg);
+  cursor: pointer;
+}
+
+/* --- Buttons (Extruded / Outset) --- */
+button {
+  width: 100%;
+  padding: 14px;
+  background: var(--bg-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--highlight-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+              -6px -6px 12px var(--shadow-light);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  color: #0056b3;
+  box-shadow: 4px 4px 8px var(--shadow-dark),
+              -4px -4px 8px var(--shadow-light);
+}
+
+button:active {
+  color: var(--highlight-color);
+  /* Pressed-in effect */
+  box-shadow: inset 4px 4px 8px var(--shadow-dark),
+              inset -4px -4px 8px var(--shadow-light);
+}
+
+/* --- Links (Register/Login toggles) --- */
+#registerPrompt, #goToLogin, #goToOtpLogin, #goToPasswordLogin {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#registerPrompt:hover, #goToLogin:hover, #goToOtpLogin:hover, #goToPasswordLogin:hover {
+  text-decoration: underline;
+}
+
+/* --- Message Boxes --- */
+.message {
+  text-align: center;
+  margin: 12px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.message.error {
+  color: var(--danger-color);
+  background: var(--bg-color);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark),
+              inset -3px -3px 6px var(--shadow-light);
+  display: block;
+}
+
+.message.success {
+  color: #27ae60;
+  background: var(--bg-color);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark),
+              inset -3px -3px 6px var(--shadow-light);
+  display: block;
+}
+
+/* --- Manager Section --- */
+#manager {
+  max-width: 700px;
+}
+
+#welcomeMsg {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: var(--text-color);
+}
+
+/* --- Password List --- */
+#passwordList {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.password-item {
+  background: var(--bg-color);
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin: 12px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  align-items: center;
+  font-size: 1rem;
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+              -6px -6px 12px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.password-item span {
+  word-break: break-all;
+  padding-right: 10px;
+}
+
+.password-item .password-value {
+  cursor: pointer;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.delete-btn {
+  background: var(--danger-color);
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+.delete-btn:hover {
+  background: #b03030;
+  color: #fff;
+  box-shadow: 4px 4px 8px var(--shadow-dark),
+              -4px -4px 8px var(--shadow-light);
+}
+
+/* --- Strength Bar --- */
+#strength-bar-container {
+  width: 100%;
+  height: 10px;
+  background: var(--bg-color);
+  border-radius: 5px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: inset 3px 3px 6px var(--shadow-dark),
+              inset -3px -3px 6px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+#strength-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.4s ease, background 0.4s ease;
+  background: var(--danger-color);
+}
+
+#strength-text {
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+/* --- Logout Button --- */
+#logoutBtn {
+  background: var(--bg-color);
+  color: var(--danger-color);
+  margin-top: 20px;
+}
+
+#logoutBtn:hover {
+  color: #b03030;
+}
+
+/* --- Utility Buttons (Suggest/PIN) --- */
+.utility-btn {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--bg-color);
+  box-shadow: 4px 4px 8px var(--shadow-dark),
+              -4px -4px 8px var(--shadow-light);
+}
+.utility-btn:hover {
+  color: var(--highlight-color);
+}

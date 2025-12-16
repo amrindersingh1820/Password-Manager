@@ -1,0 +1,23 @@
+{
+    "xyz2": {
+        "login_hash": "$2b$12$ls44P/tqd8VY/SjGf4ghi.6V.F4fUcIN6.1R0u0JM0wEYoNv0t5N6",
+        "master_hash": "$2b$12$.e.CGo/t6ZB5D6h/bYGKX.nisJInb8KxtoJ2.2kGt/fd9ugGyjQCq"
+    },
+    "xyz3": {
+        "login_hash": "$2b$12$wZ4GPHoEbXgOZhTRWA4rFeYlDz8PGUFm80HKShBRD.t9TVpU4NN42",
+        "master_hash": "$2b$12$U/9iWbZdykuuOUDDhGywHOG2qPT5GUud1Ury6JGm4S/axjPOvIbQ2"
+    },
+    "abc1": {
+        "login_hash": "$2b$12$8v8ZAxnx5ZHGRKC29FEmKuZoR0Tq68LpUf1u0yD785FEeZTS//Bsy",
+        "master_hash": "$2b$12$0AaoloOzB1p/p4MYEUngn.lNvp9jGJGv/8d1enB2iHJmruPY3OtCm"
+    },
+    "qwe2": {
+        "login_hash": "$2b$12$2oee2O8Hxt8/dhN9CD1B.emGfGVQ5lHKKsI3q/wrselmo/Y9WNf8q",
+        "master_hash": "$2b$12$jCnzK9EHJxBzXQaehjaarulxXLw8XndkNLC3TMy1X/ZOtKiYkcONq"
+    },
+    "amrinder1": {
+        "login_hash": "$2b$12$KlKVxTPmeuGjE5v40/tnk.RzcD4Tu5JGn7i..PesOjBCBvSMIIJ4a",
+        "master_hash": "$2b$12$3KgF2jbC5v5uj/DTbE4qIOShil9zsQ16Buc3F9WbnhjNf4FLT.DkC",
+        "email": "amrindersingh1820@gmail.com"
+    }
+}
